@@ -1,0 +1,18 @@
+{
+  "name": "cansnteens-functions",
+  "version": "1.0.0",
+  "description": "Firebase Cloud Functions for Cans & Teens verification",
+  "main": "index.js",
+  "engines": {
+    "node": "18"
+  },
+  "dependencies": {
+    "firebase-admin": "^11.11.0",
+    "firebase-functions": "^4.4.0",
+    "@sendgrid/mail": "^7.8.0",
+    "bcryptjs": "^2.4.3"
+  },
+  "scripts": {
+    "lint": "eslint ."
+  }
+}

@@ -1,215 +1,9 @@
-https://i.pinimg.com/736x/37/77/a3/3777a38c1565dffd66800f39681007f7.jpg# Cans & Teens - College Canteen Ordering Platform
-
-## Overview
-**Cans & Teens** is a modern, interactive college canteen ordering platform with a rotating wheel category selector, student verification via email PIN, and a smooth ordering experience.
-
-## Features
-
-### 🎡 Interactive Category Wheel
-- Rotating wheel to browse food categories
-- Drag-to-spin or click-to-select categories
-- Smooth animations with real-time filtering
-
-### 🛒 Shopping Cart
-- Add items to cart with visual fly-to-cart animations
-- Adjust quantities on the fly
-- Real-time cart count badge
-- Order confirmation screenj
-
-### 🔐 Student Verification (Firebase + Email PIN)
-- Sign-in with name, DOB, roll number, and college email
-- PIN sent to email for verification
-- Secure PIN validation (15-minute expiry)
-- Client-side localStorage tracking
-
-### ✨ AI Meal Suggestions
-- Gemini API integration for combo suggestions
-- Context-aware food pairing recommendations
-- GenZ-friendly messaging
-
-### 🎨 Modern UI
-- Dark mode with gradient accents (pink & purple)
-- Tailwind CSS styling
-- Fully responsive design
-- Smooth fade-in animations
-- Loading skeletons
-
-## Getting Started
-
-### Prerequisites
-- Python 3 (for local development server)
-- Modern web browser
-- (Optional) Firebase project credentials for sign-in feature
-
-### Installation & Running Locally
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/Khushi2494/CansNTeens.git
-   cd CansNTeens
-   ```
-
-2. **Start a local HTTP server:**
-   ```bash
-   python3 -m http.server 8000 --bind 127.0.0.1
-   ```
-
-3. **Open in your browser:**
-   - Navigate to: **http://127.0.0.1:8000/**
-   - The server will automatically serve `index.html`
-
-4. **Interact with the app:**
-   - Click **"Click to Enter"** on the preloader screen
-   - Explore the rotating wheel to filter by category
-   - Use search and price filters
-   - Add items to your cart
-   - Proceed to checkout (order confirmation)
-
-### Health Check
-Test that the server is running:
-```bash
-curl -I http://127.0.0.1:8000/
-```
-
-Expected response:
-```
-HTTP/1.0 200 OK
-Server: SimpleHTTP/0.6 Python/3.x.x
-```
-
-## Project Structure
-
-```
-CansNTeens/
-├── index.html              # Main application (UI + logic)
-├── firebase-config.js      # Firebase initialization (optional, for sign-in)
-├── verification.js         # Student verification modal & logic (optional)
-├── functions/
-│   ├── index.js           # Cloud Functions (PIN generation & verification)
-│   └── package.json       # Node dependencies
-├── SETUP.md               # Firebase & Cloud Functions deployment guide
-├── README.md              # This file
-└── LICENSE                # Project license
-```
-
-## File Descriptions
-
-- **`index.html`** – Complete single-page app with all UI, state management, and interaction logic
-- **`firebase-config.js`** – Firebase SDK initialization (required if using student sign-in)
-- **`verification.js`** – Client-side verification modal (requires Firebase)
-- **`functions/index.js`** – Cloud Functions for PIN generation, email sending, and verification
-- **`SETUP.md`** – Step-by-step guide for Firebase & SendGrid deployment
-
-## Features in Detail
-
-### Menu & Filtering
-- 20+ food items across multiple categories
-- Real-time search by dish name
-- Price range filter (₹10–₹150)
-- Category wheel for quick navigation
-
-### Cart Management
-- Item quantity adjustment
-- Persistent cart session
-- Order total calculation (before taxes)
-- Undo via back button
-
-### Student Sign-In (Optional)
-- Email-based verification using Firebase Firestore
-- 6-digit PIN sent via SendGrid
-- 15-minute PIN expiry for security
-- Verified students stored in `verifiedStudents` collection
-
-### Meal Suggestions
-- Powered by Google Gemini API
-- Suggests one combo item based on current cart
-- GenZ-friendly tone and messaging
-
-## Configuration
-
-### Firebase Setup (For Sign-In Feature)
-1. Create a Firebase project
-2. Enable Firestore and Cloud Functions
-3. Create `firebase-config.js` with your credentials:
-   ```javascript
-   const firebaseConfig = {
-     apiKey: "YOUR_API_KEY",
-     authDomain: "YOUR_PROJECT.firebaseapp.com",
-     projectId: "YOUR_PROJECT_ID",
-     storageBucket: "YOUR_PROJECT.appspot.com",
-     messagingSenderId: "YOUR_SENDER_ID",
-     appId: "YOUR_APP_ID",
-     functionsRegion: "us-central1" // or your region
-   };
-   ```
-
-### SendGrid Setup (For PIN Emails)
-1. Create a SendGrid account and generate an API key
-2. Configure Cloud Functions:
-   ```bash
-   firebase functions:config:set sendgrid.key="YOUR_KEY" sendgrid.from="noreply@yourdomain.com"
-   ```
-
-See `SETUP.md` for complete deployment instructions.
-
-## Environment Variables (Cloud Functions)
-- `SENDGRID_API_KEY` – SendGrid API key
-- `SENDGRID_FROM_EMAIL` – Verified sender email address
-
-## Browser Support
-- Chrome 90+
-- Firefox 88+
-- Safari 14+
-- Edge 90+
-
-## Technologies Used
-- **Frontend:** HTML5, CSS3 (Tailwind), JavaScript (ES6+)
-- **UI Libraries:** Tailwind CSS, Tone.js (audio)
-- **Backend:** Firebase Firestore, Google Cloud Functions
-- **Email Service:** SendGrid
-- **AI:** Google Gemini API
-- **Security:** bcryptjs (PIN hashing)
-
-## Contributing
-Contributions are welcome! Please:
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/your-feature`)
-3. Commit your changes (`git commit -m "Add your feature"`)
-4. Push to the branch (`git push origin feature/your-feature`)
-5. Open a Pull Request
-
-## Troubleshooting
-
-### "Cannot find firebase-config.js"
-- This is expected if you haven't set up Firebase yet
-- The app will still work for menu browsing and ordering
-- Sign-in feature requires Firebase configuration
-
-### "Suggestion button not working"
-- Ensure you've added your Gemini API key to the code
-- Check browser console for API errors
-
-### "PIN not received"
-- Verify SendGrid configuration in Cloud Functions runtime
-- Check spam folder for verification email
-- Ensure email address is correctly entered
-
-## License
-This project is licensed under the MIT License – see LICENSE file for details.
-
-## Contact
-For questions or support, please open an issue on GitHub or contact the project maintainer.
-
----
-
-## Quick Links
-- 🌐 **Live Demo:** (Coming soon)
-- 📚 **Documentation:** See `SETUP.md` for Firebase deployment
-- 🐛 **Report Issues:** [GitHub Issues](https://github.com/Khushi2494/CansNTeens/issues)
-
----
-
-**Happy Ordering! 🍔🍕🍜**
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cans & Teens - Canteen Ordering</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -308,26 +102,26 @@ For questions or support, please open an issue on GitHub or contact the project 
     <script>
         // --- DATA (This will soon be replaced by Firebase) ---
         let menu = [
-            { id: 1, name: 'Pav Bhaji', category: 'Main Course', price: 80, image: 'https://media.istockphoto.com/id/1143194090/photo/pav-bhaji-is-a-fast-food-dish-from-india-consisting-of-a-thick-vegetable-curry-served-with.jpg?s=612x612&w=0&k=20&c=i-wA8G8y-3C2g2u3SGUJ5_239aVAb8o_a_e_y72KQl4=' },
-            { id: 2, name: 'Chole Bhature', category: 'Main Course', price: 90, image: 'https://media.istockphoto.com/id/1305419962/photo/chole-bhature.jpg?s=612x612&w=0&k=20&c=L4n2OAD51Xv-KKa-k2m2-oLT-5edgq-hX-71z14n5ZM=' },
-            { id: 3, name: 'Thali', category: 'Main Course', price: 120, image: 'https://media.istockphoto.com/id/1457884617/photo/traditional-indian-thali-from-above.jpg?s=612x612&w=0&k=20&c=i3X-ewGgVq-nL-b-S-4bpkZlE-e2q1s_Ew31Tw3e0iM=' },
-            { id: 4, name: 'Samosa', category: 'Snacks', price: 15, image: 'https://media.istockphoto.com/id/1354211116/photo/bengali-singara-or-samosa-is-a-very-popular-roadside-snack-in-kolkata-india-selective-focus.jpg?s=612x612&w=0&k=20&c=8e7KGu-flN7YVj-j-i0hsjP-x-lT9-2pXz-3VCh-33k=' },
-            { id: 5, name: 'Pasta', category: 'Continental', price: 100, image: 'https://media.istockphoto.com/id/1368369282/photo/penne-alla-vodka.jpg?s=612x612&w=0&k=20&c=Y4Kk0Fl0jL2T9_B-E-Qy-1p-b-czL3E5D-tg4e03-zs=' },
-            { id: 6, name: 'Chilli Potato', category: 'Chinese', price: 70, image: 'https://media.istockphoto.com/id/1325763173/photo/chilli-potato-in-black-bowl-on-dark-slate-table-top-honey-chilli-potato-is-indian-chinese.jpg?s=612x612&w=0&k=20&c=K5gXG1JBL-103-W1GkG-Lq1-Q3F-c-Z72-9-XyqH4eA=' },
-            { id: 7, name: 'Dosa', category: 'South Indian', price: 60, image: 'https://media.istockphoto.com/id/1296645939/photo/masala-dosa.jpg?s=612x612&w=0&k=20&c=i1_Gu-T6dcr-8y1NOU6d4Aa-eNILKnF34t-3-3d02-I=' },
-            { id: 8, name: 'Idli', category: 'South Indian', price: 50, image: 'https://media.istockphoto.com/id/1156891152/photo/south-indian-food-idli-sambar-and-chutney-on-a-banana-leaf.jpg?s=612x612&w=0&k=20&c=uT6n5kM_N-u3fA-MvJz4rKz_M2u-9t0i2kYmNbp_3dc=' },
-            { id: 9, name: 'Gulab Jamun', category: 'Desserts', price: 30, image: 'https://media.istockphoto.com/id/1309855361/photo/gulab-jamun-in-white-bowl-with-rose-and-pistachio.jpg?s=612x612&w=0&k=20&c=19zB-M6yUf6fA6eF01au-hT84b-FpSjZ-r-l-v-k_wQ=' },
-            { id: 10, name: 'Jalebi', category: 'Desserts', price: 40, image: 'https://media.istockphoto.com/id/1325350325/photo/jalebi-and-rabri-or-rabdi-is-a-sweet-dish-most-popular-in-india-and-pakistan-selective-focus.jpg?s=612x612&w=0&k=20&c=_h132wO_4X5-q5y_81XyL-S-9G-K_J6x6c_V_Y0E4n4=' },
-            { id: 11, name: 'Burger', category: 'Continental', price: 50, image: 'https://media.istockphoto.com/id/1442347271/photo/delicious-burgers-with-beef-tomato-cheese-and-lettuce.jpg?s=612x612&w=0&k=20&c=l85mgv8c-D2Ibx-3tL-L-Kq3H5q-ptF_G-b-nYNKjB0=' },
-            { id: 12, name: 'Sandwich', category: 'Snacks', price: 40, image: 'https://media.istockphoto.com/id/1323315688/photo/club-sandwich-on-a-white-plate.jpg?s=612x612&w=0&k=20&c=O2-m5fS-PX-3o1-iJk-t-MvN2V_A_rCjU-NLo7G0-8o=' },
-            { id: 13, name: 'Chowmein', category: 'Chinese', price: 65, image: 'https://media.istockphoto.com/id/1345479240/photo/schezwan-veg-hakka-noodles-with-paneer-in-black-bowl-on-dark-slate-table-top-szechwan-noodles.jpg?s=612x612&w=0&k=20&c=nEaOq3K-o1o1g8wJ8kZg-tVzB1pLd-l8L4q7i1oO93k=' },
-            { id: 14, name: 'Momos', category: 'Chinese', price: 60, image: 'https://media.istockphoto.com/id/1321283232/photo/veg-steam-momo-nepalese-traditional-dumpling-cuisine-in-black-bowl-on-dark-slate-table-top.jpg?s=612x612&w=0&k=20&c=Kk2YgGI53y3-Cv-w9_IEXDo8aQ79-F7-E-d-f06iS_E=' },
-            { id: 15, name: 'French Fries', category: 'Snacks', price: 50, image: 'https://media.istockphoto.com/id/1343444771/photo/french-fries-in-a-white-paper-box.jpg?s=612x612&w=0&k=20&c=p-60vsl3N5-5y4ylRhxZm1-262CVLt2HjO2nCgnSq3k=' },
-            { id: 16, name: 'Maggi', category: 'Snacks', price: 40, image: 'https://media.istockphoto.com/id/1318498939/photo/masala-maggi-noodles.jpg?s=612x612&w=0&k=20&c=iRjS-aD_w3jFT4-p3-QkI2F4i-2-o2u7c_E-7v_G_Lw=' },
-            { id: 17, name: 'Spring Rolls', category: 'Chinese', price: 55, image: 'https://media.istockphoto.com/id/1309312030/photo/fried-spring-rolls-on-black-plate.jpg?s=612x612&w=0&k=20&c=h4uK-y3oA-wDaeD95-2-M-Pa_J-E-fBzoC9-0s-a-g8=' },
-            { id: 18, name: 'Kathi Roll', category: 'Main Course', price: 90, image: 'https://media.istockphoto.com/id/1291880345/photo/paneer-tikka-kathi-roll-or-veg-seekh-kebab-wrap-using-maida-paratha-stuffed-with-tandoori.jpg?s=612x612&w=0&k=20&c=qTogK0_8ZWU8b92rxoIo2kG0bgtzJ7fJ2-b13-sDq2k=' },
-            { id: 19, name: 'Cold Coffee', category: 'Beverages', price: 60, image: 'https://media.istockphoto.com/id/1393672942/photo/iced-coffee-in-a-glass-with-cream-and-peanuts.jpg?s=612x612&w=0&k=20&c=WbHkL_bE8s0Q4toDNb31oN421-4w53a-k-rZ-yBmhdk=' },
-            { id: 20, name: 'Fresh Juice', category: 'Beverages', price: 50, image: 'https://media.istockphoto.com/id/1301348873/photo/refreshing-summer-smoothies.jpg?s=612x612&w=0&k=20&c=y-0Ka4f5Y-EU5qW-hN11hGNsN1tqjJQI-Lpx-PQLbVo=' },
+            { id: 1, name: 'Pav Bhaji', category: 'Main Course', price: 80, image: 'https://i.pinimg.com/1200x/9f/61/b5/9f61b5dff080cc8f1795ecb8c326a363.jpg' },
+            { id: 2, name: 'Chole Bhature', category: 'Main Course', price: 90, image: 'https://i.pinimg.com/736x/d6/60/25/d660255e0ac13e20bc3c674ee3d11ac4.jpg' },
+            { id: 3, name: 'Thali', category: 'Main Course', price: 120, image: 'https://i.pinimg.com/736x/bc/54/5c/bc545c4796c7665529d55eae56116ceb.jpg' },
+            { id: 4, name: 'Samosa', category: 'Snacks', price: 15, image: 'https://i.pinimg.com/1200x/1b/da/ca/1bdaca54b40441bc8a1bccc733e3ca43.jpg' },
+            { id: 5, name: 'Pasta', category: 'Continental', price: 100, image: 'https://i.pinimg.com/736x/e8/68/c8/e868c8f4d0928bcb470fcf4e69c212cc.jpg' },
+            { id: 6, name: 'Chilli Potato', category: 'Chinese', price: 70, image: 'https://i.pinimg.com/736x/48/9a/bb/489abb29b2d64369cf19d5109b39a918.jpg' },
+            { id: 7, name: 'Dosa', category: 'South Indian', price: 60, image: 'https://i.pinimg.com/736x/bc/c2/73/bcc273590ad49ae3e93e7ef66773cb40.jpg' },
+            { id: 8, name: 'Idli', category: 'South Indian', price: 50, image: 'https://i.pinimg.com/736x/31/17/79/3117798277633d30993e40fdb344e789.jpg' },
+            { id: 9, name: 'Gulab Jamun', category: 'Desserts', price: 30, image: 'https://i.pinimg.com/1200x/dc/1d/d6/dc1dd615ac36b0a37223a3678aaa7668.jpg' },
+            { id: 10, name: 'Jalebi', category: 'Desserts', price: 40, image: 'https://i.pinimg.com/736x/21/ca/d2/21cad2816230d87001208d8b48ec49d2.jpg' },
+            { id: 11, name: 'Burger', category: 'Continental', price: 50, image: 'https://i.pinimg.com/1200x/11/c4/1b/11c41bee8a8ade2a3513ad8f02d0aee2.jpg' },
+            { id: 12, name: 'Sandwich', category: 'Snacks', price: 40, image: 'https://i.pinimg.com/736x/16/c6/e9/16c6e980c05d7be810c168f1ed5b0534.jpg' },
+            { id: 13, name: 'Chowmein', category: 'Chinese', price: 65, image: 'https://i.pinimg.com/736x/37/77/a3/3777a38c1565dffd66800f39681007f7.jpg' },
+            { id: 14, name: 'Momos', category: 'Chinese', price: 60, image: 'https://i.pinimg.com/1200x/04/6e/ee/046eeed79cb69133d373eec345517561.jpg' },
+            { id: 15, name: 'French Fries', category: 'Snacks', price: 50, image: 'https://i.pinimg.com/1200x/99/9b/fc/999bfc3c4672ce0553a9ca4c7fe1a87c.jpg' },
+            { id: 16, name: 'Maggi', category: 'Snacks', price: 40, image: 'https://i.pinimg.com/736x/30/f6/a4/30f6a4357a7d192e939874a4b8c43e62.jpg' },
+            { id: 17, name: 'Spring Rolls', category: 'Chinese', price: 55, image: 'https://i.pinimg.com/1200x/6e/30/c0/6e30c0ce304c63b176e454c72fe8b807.jpg' },
+            { id: 18, name: 'Kathi Roll', category: 'Main Course', price: 90, image: 'https://i.pinimg.com/736x/60/7e/b2/607eb272e2c7806bb4803625d04ea607.jpg' },
+            { id: 19, name: 'Cold Coffee', category: 'Beverages', price: 60, image: 'https://i.pinimg.com/736x/fd/a9/ad/fda9ad56b9d62070fec105cd93693129.jpg' },
+            { id: 20, name: 'Fresh Juice', category: 'Beverages', price: 50, image: 'https://i.pinimg.com/736x/3a/4f/9d/3a4f9dbce23756aea5bd692b07f26c71.jpg' },
         ];
         let categories = ['All', ...[...new Set(menu.map(item => item.category))].sort()];
 
